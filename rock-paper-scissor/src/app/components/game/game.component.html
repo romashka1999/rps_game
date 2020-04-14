@@ -1,0 +1,16 @@
+<div class="container">
+    <app-option option="rock" (choice)="onChoice($event)"></app-option>
+    <app-option option="paper" (choice)="onChoice($event)"></app-option>
+    <app-option option="scissor" (choice)="onChoice($event)"></app-option>
+</div>
+<div class="controls">
+    <app-control (gameStarted)="onGameStarted($event)" *ngIf="!gameIsRunning"></app-control>
+    <div *ngIf="gameIsRunning">
+        <span>draws</span>
+        <p>{{draws}}</p>
+        <span>player wins</span>
+        <p>{{playerWins}}</p>
+        <span>computer wins</span>
+        <p>{{computerWIns}}</p>
+    </div>
+</div>
